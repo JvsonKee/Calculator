@@ -1,0 +1,37 @@
+.container {
+     border: 1px solid black;
+     width: 425px;
+     height: 490px;
+     margin-left: auto;
+     margin-right: auto;
+}
+#screen {
+    border: 1px solid black;
+    width: 350px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+#buttons {
+    border: 1px solid black;
+    width: 350px;
+    height: 325px;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    
+}
+#buttons button {
+    margin: 5px;
+}
+#clear {
+    grid-column: 1/3;
+}
+#delete {
+    grid-column: 3/5;
+}
