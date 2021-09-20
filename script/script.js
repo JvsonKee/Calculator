@@ -17,7 +17,6 @@ numBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
         let value = btn.value;
         appendNumber(value);
-        
     })
 })
 
@@ -29,7 +28,6 @@ operatorBtn.forEach((btn) => {
 })
 
 function appendNumber(number) {
-    
     content.textContent += number;
 }
 function add(a,b) {
