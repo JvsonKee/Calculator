@@ -1,4 +1,5 @@
-const numBtn = document.querySelectorAll("button");
+const numBtn = document.querySelectorAll("[data-number]");
+const operatorBtn = document.querySelectorAll("[data-operator]");
 const decimalBtn = document.querySelector("#decimal")
 
 const addBtn = document.querySelector("#add");
@@ -10,17 +11,27 @@ const equalBtn = document.querySelector("#equal");
 const clearBtn = document.querySelector("#clear");
 const removeBtn = document.querySelector("#remove");
 
-let display = document.getElementById("display");
-
+let content = document.getElementById("content");
 
 numBtn.forEach((btn) => {
-    btn.addEventListener('click', () => { 
+    btn.addEventListener('click', () => {
         let value = btn.value;
-        display.innerHTML = value;
-        firstNum = value;
+        appendNumber(value);
+        
     })
 })
 
+operatorBtn.forEach((btn) => {
+    btn.addEventListener('click', () => {
+        let value = btn.value;
+        display.append = value;
+    })
+})
+
+function appendNumber(number) {
+    
+    content.textContent += number;
+}
 function add(a,b) {
     let c;
     c = a + b;
