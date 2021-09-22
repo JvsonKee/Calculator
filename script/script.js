@@ -11,24 +11,36 @@ const equalBtn = document.querySelector("#equal");
 const clearBtn = document.querySelector("#clear");
 const removeBtn = document.querySelector("#remove");
 
-let content = document.getElementById("content");
+let displayContent = document.getElementById("displayContent");
+
+let currentValue;
+let currentOperator;
 
 numBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
-        let value = btn.value;
+        let value = btn.textContent;
         appendNumber(value);
+        currentValue = displayContent.textContent;
+        console.log(currentValue);
     })
 })
 
 operatorBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
-        let value = btn.value;
-        display.append = value;
+        let currentOperator = btn.textContent;
+        console.log(currentOperator);
     })
 })
 
 function appendNumber(number) {
-    content.textContent += number;
+    if (displayContent.textContent == "0") {
+        resetScreen();
+    }
+    displayContent.textContent += number;
+    
+}
+function resetScreen() {
+    displayContent.textContent = "";
 }
 function add(a,b) {
     let c;
