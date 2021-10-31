@@ -15,12 +15,13 @@ let displayContent = document.getElementById("displayContent");
 
 let currentValue;
 let currentOperator;
+let prevValue;
 
 numBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
         let value = btn.textContent;
+        currentValue += value;
         appendNumber(value);
-        currentValue = displayContent.textContent;
         console.log(currentValue);
     })
 })
@@ -28,16 +29,31 @@ numBtn.forEach((btn) => {
 operatorBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
         let currentOperator = btn.textContent;
+        currentValue = displayContent.textContent;
+        appendOperator(" " + currentOperator + " ");
+        console.log(currentValue);
+        console.log(prevValue);
         console.log(currentOperator);
     })
+})
+equalBtn.addEventListener("click", () => {
+    switch (currentOperator) {
+        case '+':
+        case '-':
+        case '÷':
+        case '*':
+    }
 })
 
 function appendNumber(number) {
     if (displayContent.textContent == "0") {
         resetScreen();
     }
-    displayContent.textContent += number;
+    displayContent.innerText += number;
     
+}
+function appendOperator(operator) {
+    displayContent.textContent += operator;
 }
 function resetScreen() {
     displayContent.textContent = "";
