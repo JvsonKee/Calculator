@@ -6,19 +6,27 @@
      margin-right: auto;
 }
 #display {
+    display: flex;
     border: 1px solid black;
     width: 350px;
     height: 100px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
-}
-#prevContent {
-    float: right;
+    flex-direction: column;
+    text-align: end;
+    justify-content: space-around;
 }
 #displayContent {
-    padding-top: 60px;
-    float: right;
+    background-color: pink;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+#answerContent {
+    background-color: pink;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: larger;
 }
 #buttons {
     border: 1px solid black;
